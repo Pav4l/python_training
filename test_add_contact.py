@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
-import unittest, time, re
+import unittest
 
 class TestAddContact(unittest.TestCase):
     def setUp(self):
@@ -16,7 +16,7 @@ class TestAddContact(unittest.TestCase):
         wd = self.wd
         wd.get("http://localhost/addressbook/")
         wd.find_element_by_xpath("//input[@value='Login']").click()
-        wd.find_element_by_link_text("add new").click()
+        wd.find_element_by_link_text("ad  new").click()
         wd.find_element_by_name("firstname").click()
         wd.find_element_by_name("firstname").clear()
         wd.find_element_by_name("firstname").send_keys("I")
