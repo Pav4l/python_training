@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 #from selenium.webdriver.common.by import By
 #from selenium.webdriver.common.keys import Keys
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException
 import pytest
-from contact import Contact
-from application_contact import Application_contact
+from model_contact.contact import Contact
+from fixture_contact.application_contact import Application_contact
 
 @pytest.fixture
 def app(request):
