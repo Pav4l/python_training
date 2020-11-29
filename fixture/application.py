@@ -1,5 +1,4 @@
 from selenium import webdriver
-
 from fixture.group import GroupHelper
 from fixture.session import SessionHelper
 #from selenium.webdriver.firefox.webdriver import WebDriver
