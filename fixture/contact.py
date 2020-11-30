@@ -90,3 +90,14 @@ class ContactHelper:
         wd = self.app.wd
         # open and_new_contact page
         wd.find_element_by_link_text("add new").click()
+
+    def delete_first_contact(self):
+        wd = self.app.wd
+        self.open_home_page()
+        #select first group
+        wd.find_element_by_name("selected[]").click()
+        #submit deletion
+        wd.find_element_by_name("delete").click()
+        self.return_to_home_page()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        self.assertRegexpMatches(self.close_alert_and_get_its_text(), r"^Delete 1 addresses[\s\S]$")
