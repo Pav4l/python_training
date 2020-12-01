@@ -9,7 +9,7 @@ def test_edit_contact(app):
                 middlename="middlename",
                 nickname="new1", title="new2", home="new_home1",
                 work="work1", fax="work2", email="email1", email2="email2", email3="email3", homepage="234",
-                new_group="", bmonth="February", byear="1971", bday="2", aday="2", amonth="February",
-                ayear="2001", address2="address_new", phone2="333222333", notes="no123"))
+                new_group="", bmonth="February", byear="1971", bday="2", amonth="February",
+                ayear="2005", aday="17", address2="address_new", phone2="333222333", notes="no123"))
     app.return_to_home_page()
     app.session.logout()
