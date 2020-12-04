@@ -1,5 +1,5 @@
 class GroupHelper:
-    def  __init__(self, app):
+    def __init__(self, app):
         self.app = app
 
     def return_to_groups_page(self):
@@ -22,7 +22,7 @@ class GroupHelper:
         self.return_to_groups_page()
 
     def fill_group_form(self, group):
-        wd = self.app.wd
+        #wd = self.app.wd
         self.change_field_value("group_name", group.name)
         self.change_field_value("group_header", group.header)
         self.change_field_value("group_footer", group.footer)
