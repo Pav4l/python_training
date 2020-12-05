@@ -18,10 +18,10 @@ class Application:
         except:
             return False
 
-    def return_to_home_page(self):
-        wd = self.wd
+    #def return_to_home_page(self):
+    #    wd = self.wd
         # return to home page
-        wd.find_element_by_link_text("home").click()
+    #    wd.find_element_by_link_text("home").click()
 
     def open_home_page(self):
         wd = self.wd

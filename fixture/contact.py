@@ -75,15 +75,17 @@ class ContactHelper:
 
     def open_and_new_contact_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("add new").click()
+        if not (wd.current_url.endswith("addressbook/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
+            wd.find_element_by_link_text("add new").click()
 
-    def open_home_page(self):
-        wd = self.app.wd
-        wd.get("http://localhost/addressbook/")
+    #def open_home_page(self):
+    #    wd = self.app.wd
+    #    wd.get("http://localhost/addressbook/")
 
     def open_contacts_page(self):
         wd = self.app.wd
-        wd.find_element_by_link_text("home").click()
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements(By.XPATH, "//form[2]/div[1]/input")) > 0):
+            wd.find_element_by_link_text("home").click()
 
     def delete_first_contact(self):
         wd = self.app.wd
@@ -92,7 +94,7 @@ class ContactHelper:
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
-        self.open_home_page()
+        self.open_contacts_page()
 
     def edit(self, new_contact_data):
         wd = self.app.wd
@@ -118,7 +120,7 @@ class ContactHelper:
         #edit contact
         self.fill_contact_form(contact)
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
-        self.open_home_page()
+        self.open_contacts_page()
 
     def select_first_contact(self):
         wd = self.app.wd

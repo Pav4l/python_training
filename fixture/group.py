@@ -2,14 +2,9 @@ class GroupHelper:
     def __init__(self, app):
         self.app = app
 
-    def return_to_groups_page(self):
-        wd = self.app.wd
-        # return to groups page
-        wd.find_element_by_link_text("group page").click()
-
-    def open_home_page(self):
-        wd = self.app.wd
-        wd.get("http://localhost/addressbook/")
+    #def open_home_page(self):
+    #    wd = self.app.wd
+    #    wd.get("http://localhost/addressbook/")
 
     def create(self, group):
         wd = self.app.wd
@@ -19,7 +14,7 @@ class GroupHelper:
         self.fill_group_form(group)
         # submit group creation
         wd.find_element_by_name("submit").click()
-        self.return_to_groups_page()
+        self.open_groups_page()
 
     def fill_group_form(self, group):
         #wd = self.app.wd
@@ -36,11 +31,8 @@ class GroupHelper:
 
     def open_groups_page(self):
         wd = self.app.wd
-        # open group page
-        wd.find_element_by_link_text("groups").click()
-        #wd.find_element_by_name("selected[]").click()
-        #wd.find_element_by_name("delete").click()
-        #wd.find_element_by_link_text("groups").click()
+        if not(wd.current_url.endswith("/group.php") and len(wd.find_elements_by_name("new")) > 0):
+            wd.find_element_by_link_text("groups").click()
 
     def delete_first_group(self):
         wd = self.app.wd
@@ -48,7 +40,7 @@ class GroupHelper:
         self.select_first_group()
         #submit deletion
         wd.find_element_by_name("delete").click()
-        self.return_to_groups_page()
+        self.open_groups_page()
 
     def edit(self, group):
         wd = self.app.wd
@@ -58,7 +50,7 @@ class GroupHelper:
         # edit first group
         self.fill_group_form(group)
         wd.find_element_by_name("update").click()
-        self.return_to_groups_page()
+        self.open_groups_page()
 
     def select_first_group(self):
         wd = self.app.wd
@@ -74,7 +66,7 @@ class GroupHelper:
         self.fill_group_form(new_group_data)
         # submit modification
         wd.find_element_by_name("update").click()
-        self.return_to_groups_page()
+        self.open_groups_page()
 
     def count(self):
         wd = self.app.wd

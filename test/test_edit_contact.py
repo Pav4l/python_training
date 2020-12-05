@@ -7,4 +7,4 @@ def test_edit_contact(app):
                 email="email1", email2="email2", email3="email3", homepage="234", bmonth="February", byear="1971",
                 bday="2", amonth="February", ayear="2005", aday="17", new_group="", address2="address_new",
                 phone2="333222333", notes="no123"))
-    app.return_to_home_page()
+    #app.return_to_home_page()
