@@ -1,4 +1,4 @@
-from selenium.webdriver.common.by import By
+#from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from model.contact import Contact
 
@@ -18,14 +18,14 @@ class ContactHelper:
     def select_day(self, add_day, number):
         wd = self.app.wd
         if number is not None:
-            Select(wd.find_element(By.NAME, add_day)).select_by_visible_text(number)
-            wd.find_element(By.NAME, add_day).click()
+            Select(wd.find_element_by_name(add_day)).select_by_visible_text(number)
+            wd.find_element_by_name(add_day).click()
 
     def select_month(self, add_month, month):
         wd = self.app.wd
         if month is not None:
-            Select(wd.find_element(By.NAME, add_month)).select_by_visible_text(month)
-            wd.find_element(By.NAME, add_month).click()
+            Select(wd.find_element_by_name(add_month)).select_by_visible_text(month)
+            wd.find_element_by_name(add_month).click()
 
     def change_field_value(self, field_name, text):
         wd = self.app.wd
@@ -85,7 +85,7 @@ class ContactHelper:
 
     def open_contacts_page(self):
         wd = self.app.wd
-        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements(By.XPATH, "//form[2]/div[1]/input")) > 0):
+        if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//form[2]/div[1]/input")) > 0):
             wd.find_element_by_link_text("home").click()
 
     def delete_first_contact(self):
@@ -95,17 +95,18 @@ class ContactHelper:
         #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
+        wd.find_element_by_css_selector("div.msgbox")
         self.open_contacts_page()
 
-    def edit(self, new_contact_data):
-        wd = self.app.wd
-        self.open_contacts_page()
-        self.select_first_contact()
+    #def edit(self, new_contact_data):
+    #    wd = self.app.wd
+    #    self.open_contacts_page()
+    #    self.select_first_contact()
         # button "Edit"
-        wd.find_element_by_xpath("//img[@alt='Edit']").click()
+    #    wd.find_element_by_xpath("//img[@alt='Edit']").click()
         #edit contact
-        self.fill_contact_form(new_contact_data)
-        wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
+    #    self.fill_contact_form(new_contact_data)
+    #    wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
 
     def count(self):
         wd = self.app.wd
@@ -116,7 +117,7 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contacts_page()
         self.select_first_contact()
-        # button "Edit"
+        #button "Edit"
         wd.find_element_by_xpath("//img[@alt='Edit']").click()
         #edit contact
         self.fill_contact_form(contact)
@@ -132,7 +133,8 @@ class ContactHelper:
         self.open_contacts_page()
         contacts = []
         for element in wd.find_elements_by_name("entry"):
-            text = element.find_elements_by_tag_name("td")
             id = element.find_element_by_name("selected[]").get_attribute("value")
-            contacts.append(Contact(firstname=text[2].text, lastname=text[1].text, id=id))
+            lastname = element.find_element_by_xpath(".//td[2]").text
+            firstname = element.find_element_by_xpath(".//td[3]").text
+            contacts.append(Contact(lastname=lastname, firstname=firstname, id=id))
         return contacts

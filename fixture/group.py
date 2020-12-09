@@ -44,15 +44,15 @@ class GroupHelper:
         wd.find_element_by_name("delete").click()
         self.open_groups_page()
 
-    def edit(self, group):
-        wd = self.app.wd
-        self.open_groups_page()
-        self.select_first_group()
-        wd.find_element_by_name("edit").click()
+    #def edit(self, group):
+    #    wd = self.app.wd
+    #    self.open_groups_page()
+    #    self.select_first_group()
+    #    wd.find_element_by_name("edit").click()
         # edit first group
-        self.fill_group_form(group)
-        wd.find_element_by_name("update").click()
-        self.open_groups_page()
+    #    self.fill_group_form(group)
+    #    wd.find_element_by_name("update").click()
+    #    self.open_groups_page()
 
     def select_first_group(self):
         wd = self.app.wd
