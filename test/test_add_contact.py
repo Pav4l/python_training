@@ -1,33 +1,47 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
+import pytest
+import random
+import string
+import calendar
 
-def test_add_contact(app):
-    #app.open_home_page()
-    #app.contact.open_and_new_contact_page()
+def random_string(prefix, maxlen):
+    symbols = string.ascii_letters + string.digits + " "*10
+    return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlen))])
+
+def random_phone(maxlen):
+    symbols = string.digits + "()- "
+    return "".join([random.choice(symbols) for i in range(maxlen)])
+
+#def test_random_group_name(app):
+#    return random.choice(app.group.get_group_list()).name
+
+testdata = [Contact(firstname="", middlename="", lastname="", nickname="", title="", company="", address="",
+                    home="", mobile="", work="", fax="", email="", email2="", email3="", homepage="",
+                    bday="", bmonth="-", byear="", aday="", amonth="-", ayear="", group="[none]", address2="",
+                    phone2="", notes="")] + [
+               Contact(firstname=random_string("firstname", 10), middlename=random_string("middlename", 10),
+                       lastname=random_string("lastname", 10), nickname=random_string("nickname", 10),
+                       title=random_string("title", 10), company=random_string("company", 10),
+                       address=random_string("address", 10), home=random_phone(10),
+                       mobile=random_phone(10), work=random_phone(10), fax=random_phone(10),
+                       email=random_string("email1", 10), email2=random_string("email2", 10),
+                       email3=random_string("email3", 10), homepage=random_string("homepage", 10),
+                       bday=str(random.randrange(31)), bmonth=random.choice(calendar.month_name[1:13]),
+                       byear=random.randrange(1900, 2020), aday=str(random.randrange(31)),
+                       amonth=random.choice(calendar.month_name[1:13]), ayear=random.randrange(1900, 2030),
+                       group="rand", address2=random_string("address2", 10), phone2=random_phone(10),
+                       notes=random_string("notes", 10))
+               for i in range(5)
+           ]
+
+@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
+def test_add_contact(app, contact):
+    if contact.group == "rand":
+        contact.group = random.choice(app.group.get_group_list()).name
     old_contacts = app.contact.get_contact_list()
-    contact = Contact(firstname="Ivan", middlename="123456", lastname="Ivanov", company="test1", address="test2",
-                mobile="+799999999999", nickname="122", title="123", home="hjhskadf", work="12132", fax="123132",
-                email="112", email2="112", email3="1212", homepage="112", bmonth="January", byear="1970", bday="1",
-                amonth="January", ayear="2000", aday="1", new_group="None", address2="123132", phone2="123123",
-                notes="123123")
     app.contact.create(contact)
     assert len(old_contacts) + 1 == app.contact.count()
     new_contacts = app.contact.get_contact_list()
     old_contacts.append(contact)
     assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-    #app.return_to_home_page()
-
-#def test_add_empty_contact(app):
-    #app.open_home_page()
-    #app.contact.open_and_new_contact_page()
-#    old_contacts = app.contact.get_contact_list()
-#    contact = Contact(firstname="", middlename="", lastname="", company="", address="", mobile="", nickname="", title="",
-#                home="", work="", fax="", email="", email2="", email3="", homepage="", bmonth="February", byear="1978",
-#                bday="10", amonth="February", ayear="1999", aday="15", new_group="None", address2="", phone2="",
-#                notes="")
-#    app.contact.create(contact)
-#    new_contacts = app.contact.get_contact_list()
-#    assert len(old_contacts) + 1 == len(new_contacts)
-#    old_contacts.append(contact)
-#    assert sorted(old_contacts, key=Contact.id_or_max) == sorted(new_contacts, key=Contact.id_or_max)
-    #app.return_to_home_page()
