@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 from model.contact import Contact
-import pytest
+#import pytest
 import random
-from data.contacts import testdata
+#from data.contacts import testdata
 
 #@pytest.mark.parametrize("contact", testdata, ids=[repr(x) for x in testdata])
-def test_add_contact(app, data_contacts):
-    contact = data_contacts
+def test_add_contact(app, json_contacts):
+    contact = json_contacts
     if contact.group == "rand":
         contact.group = random.choice(app.group.get_group_list()).name
     old_contacts = app.contact.get_contact_list()
