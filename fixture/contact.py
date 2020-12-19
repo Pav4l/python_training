@@ -97,6 +97,16 @@ class ContactHelper:
         self.open_contacts_page()
         self.contact_cache = None
 
+    def delete_contact_by_id(self, id):
+        wd = self.app.wd
+        self.open_contacts_page()
+        wd.find_element_by_css_selector("input[value='%s']" % id).click()
+        wd.find_element_by_xpath("//input[@value='Delete']").click()
+        wd.switch_to_alert().accept()
+        wd.find_element_by_css_selector("div.msgbox")
+        self.open_contacts_page()
+        self.contact_cache = None
+
     def count(self):
         wd = self.app.wd
         self.open_contacts_page()
@@ -115,6 +125,14 @@ class ContactHelper:
         self.fill_contact_form(contact)
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
         #wd.find_element_by_css_selector("div.msgbox")
+        self.open_contacts_page()
+        self.contact_cache = None
+
+    def modify_contact_by_id(self, contact, id):
+        wd = self.app.wd
+        self.open_contact_to_edit_by_id(id)
+        self.fill_contact_form(contact)
+        wd.find_element_by_name("update").click()
         self.open_contacts_page()
         self.contact_cache = None
 
@@ -160,6 +178,12 @@ class ContactHelper:
         row = wd.find_elements_by_name("entry")[index]
         cell = row.find_elements_by_tag_name("td")[6]
         cell.find_element_by_tag_name("a").click()
+
+    def open_contact_to_edit_by_id(self, id):
+        wd = self.app.wd
+        self.open_contacts_page()
+        wd.find_element_by_xpath("//a[@href=edit.php?id='%s']//img[@alt='Edit']" % id).click()
+        # wd.get("\edit.php?id='%s']" % id)
 
 
     def get_contact_info_from_edit_page(self, index):
