@@ -182,9 +182,7 @@ class ContactHelper:
     def open_contact_to_edit_by_id(self, id):
         wd = self.app.wd
         self.open_contacts_page()
-        wd.find_element_by_xpath("//a[@href=edit.php?id='%s']//img[@alt='Edit']" % id).click()
-        # wd.get("\edit.php?id='%s']" % id)
-
+        wd.find_element_by_xpath("//a[@href='edit.php?id=%s']" % id).click()
 
     def get_contact_info_from_edit_page(self, index):
         wd = self.app.wd

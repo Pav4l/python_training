@@ -41,8 +41,8 @@ testdata = [Contact(firstname="", middlename="", lastname="", nickname="", title
                        mobile=random_phone(10), work=random_phone(10), fax=random_phone(10),
                        email=random_string("email1", 10), email2=random_string("email2", 10),
                        email3=random_string("email3", 10), homepage=random_string("homepage", 10),
-                       bday=str(random.randrange(31)), bmonth=random.choice(calendar.month_name[1:13]),
-                       byear=random.randrange(1900, 2020), aday=str(random.randrange(31)),
+                       bday=str(random.randrange(1,31)), bmonth=random.choice(calendar.month_name[1:13]),
+                       byear=random.randrange(1900, 2020), aday=str(random.randrange(1,31)),
                        amonth=random.choice(calendar.month_name[1:13]), ayear=random.randrange(1900, 2030),
                        group="rand", address2=random_string("address2", 10), phone2=random_phone(10),
                        notes=random_string("notes", 10))
