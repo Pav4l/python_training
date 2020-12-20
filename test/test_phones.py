@@ -1,5 +1,6 @@
 from random import randrange
 import re
+from model.contact import Contact
 
 def test_phones_on_home_page(app):
     contact_from_home_page = app.contact.get_contact_list()[0]
@@ -26,6 +27,18 @@ def test_compare_some_contact_on_home_and_edit_pages(app):
     assert contact_from_home_page.all_phones_from_home_page == merge_phones_like_on_home_page(contact_from_edit_page)
     assert contact_from_home_page.all_email_from_home_page == merge_email_like_on_home_page(contact_from_edit_page)
 
+def test_compare_contact_on_home_page_and_from_db(app, db):
+    contact_from_home_page = sorted(app.contact.get_contact_list(), key=Contact.id_or_max)
+    contact_from_db = sorted(db.get_contact_list(), key=Contact.id_or_max)
+    for i in range(len(contact_from_home_page)):
+        assert clear(contact_from_home_page[i].firstname) == clear(contact_from_db[i].firstname)
+        assert clear(contact_from_home_page[i].lastname) == clear(contact_from_db[i].lastname)
+        assert clear(contact_from_home_page[i].address) == clear(contact_from_db[i].address)
+        assert clear(contact_from_home_page[i].all_phones_from_home_page) == \
+               clear(merge_phones_like_on_home_page(contact_from_db[i]))
+        assert clear(contact_from_home_page[i].all_email_from_home_page) == \
+               clear(merge_email_like_on_home_page(contact_from_db[i]))
+
 def clear(s):
     return re.sub("[() -]", "", s)
 
@@ -33,7 +46,7 @@ def merge_phones_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",
                             map(lambda x: clear(x),
                                 filter(lambda x: x is not None,
-                                    [contact.home, contact.mobile, contact.work, contact.phone2]))))
+                                       [contact.home, contact.mobile, contact.work, contact.phone2]))))
 
 def merge_email_like_on_home_page(contact):
     return "\n".join(filter(lambda x: x != "",

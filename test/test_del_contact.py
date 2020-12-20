@@ -15,6 +15,5 @@ def test_delete_some_contact(app, db, check_ui):
         def clean(contact):
             return Contact(id=contact.id, firstname=" ".join(contact.firstname.strip().split()),
                            lastname=" ".join(contact.lastname.strip().split()))
-
         db_list = list(map(clean, db.get_contact_list()))
         assert sorted(db_list, key=Contact.id_or_max) == sorted(app.contact.get_contact_list(), key=Contact.id_or_max)

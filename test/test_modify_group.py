@@ -8,12 +8,6 @@ def test_modify_some_group(app, db, check_ui):
     old_groups = db.get_group_list()
     group_modify = random.choice(old_groups)
     app.group.modify_group_by_id(group, group_modify.id)
-    for row in old_groups:
-        if row.id == group_modify.id:
-            row.name = group.name
-            row.header = group.header
-            row.footer = group.footer
     new_groups = db.get_group_list()
-    assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
     if check_ui:
         assert sorted(new_groups, key=Group.id_or_max) == sorted(app.group.get_group_list(), key=Group.id_or_max)
