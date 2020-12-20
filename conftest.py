@@ -28,7 +28,7 @@ def app(request):
     fixture.session.ensure_login(username=web_config['username'], password=web_config['password'])
     return fixture
 
-@pytest.fixture(scope = "session")
+@pytest.fixture(scope="session")
 def db(request):
     db_config = load_config(request.config.getoption("--target"))['db']
     dbfixture = DbFixture(host=db_config['host'], name=db_config['name'], user=db_config['user'],
@@ -39,7 +39,7 @@ def db(request):
     return dbfixture
 
 
-@pytest.fixture(scope = "session", autouse=True)
+@pytest.fixture(scope="session", autouse=True)
 def stop(request):
     def fin():
         fixture.session.ensure_logout()

@@ -11,7 +11,6 @@ class ContactHelper:
         wd = self.app.wd
         self.open_and_new_contact_page()
         self.fill_contact_form(contact)
-        # submit and_new_contact page
         wd.find_element_by_name("submit").click()
         #wd.find_element_by_xpath("(//input[@name='submit'])[2]").click()
         self.contact_cache = None
@@ -90,7 +89,6 @@ class ContactHelper:
         wd = self.app.wd
         self.open_contacts_page()
         self.select_contact_by_index(index)
-        #submit deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
         wd.find_element_by_css_selector("div.msgbox")
@@ -117,11 +115,8 @@ class ContactHelper:
 
     def modify_contact_by_index(self, index, contact):
         wd = self.app.wd
-        #self.open_contacts_page()
         self.select_contact_by_index(index)
-        #button "Edit"
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
-        #edit contact
         self.fill_contact_form(contact)
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
         #wd.find_element_by_css_selector("div.msgbox")
