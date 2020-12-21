@@ -73,10 +73,6 @@ class ContactHelper:
         if not (wd.current_url.endswith("addressbook/edit.php") and len(wd.find_elements_by_name("submit")) > 0):
             wd.find_element_by_link_text("add new").click()
 
-    #def open_home_page(self):
-    #    wd = self.app.wd
-    #    wd.get("http://localhost/addressbook/")
-
     def open_contacts_page(self):
         wd = self.app.wd
         if not (wd.current_url.endswith("/addressbook/") and len(wd.find_elements_by_xpath("//form[2]/div[1]/input")) > 0):
@@ -119,7 +115,6 @@ class ContactHelper:
         wd.find_elements_by_xpath("//img[@alt='Edit']")[index].click()
         self.fill_contact_form(contact)
         wd.find_element_by_xpath("(//input[@name='update'])[2]").click()
-        #wd.find_element_by_css_selector("div.msgbox")
         self.open_contacts_page()
         self.contact_cache = None
 
@@ -134,6 +129,10 @@ class ContactHelper:
     def select_first_contact(self):
         wd = self.app.wd
         wd.find_element_by_name("selected[]").click()
+
+    def select_contact_by_id(self, id):
+        browser = self.app.wd
+        browser.find_element_by_css_selector("input[value='%s']" % id).click()
 
     def select_contact_by_index(self, index):
         wd = self.app.wd
@@ -208,3 +207,22 @@ class ContactHelper:
         fax = re.search("F: (.*)", text).group(1)
         phone2 = re.search("P: (.*)", text).group(1)
         return Contact(home=home, work=work, mobile=mobile, fax=fax, phone2=phone2)
+
+    def add_contact_to_group(self, contact_id, group_id, group_name):
+        wd = self.app.wd
+        self.open_contacts_page()
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_name("group").click()
+        wd.find_element_by_xpath("(//option[@value=%s])[2]" % group_id).click()
+        wd.find_element_by_name("add").click()
+        wd.find_element_by_link_text('group page "%s"' % group_name).click()
+
+    def delete_contact_from_group(self, group_id, contact_id):
+        wd = self.app.wd
+        self.open_contacts_page()
+        wd.find_element_by_name ("group").click()
+        wd.find_element_by_xpath("//option[@value=%s]" % group_id).click()
+        self.select_contact_by_id(contact_id)
+        wd.find_element_by_name("remove").click()
+        wd.find_element_by_css_selector("div.msgbox")
