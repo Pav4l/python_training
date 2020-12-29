@@ -1,0 +1,129 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "name" : "categories",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "children" : [ {
+        "name" : "test_add_group[None:;;]",
+        "uid" : "5e08fa2d8c587e36",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280245427,
+          "stop" : 1609280245428,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:;;" ]
+      }, {
+        "name" : "test_add_group[None:name\\;header^V5 ;94l )ey;footerrR ]",
+        "uid" : "a28bd6913ac83a31",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280247500,
+          "stop" : 1609280247500,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name\\;header^V5 ;94l )ey;footerrR " ]
+      }, {
+        "name" : "test_add_group[None:name(7T3 ;headeri[O^a]UE#i)D?;footer?dEw]+#*@^CBm] MYE]",
+        "uid" : "4068111bca80be47",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280248620,
+          "stop" : 1609280248620,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name(7T3 ;headeri[O^a]UE#i)D?;footer?dEw]+#*@^CBm] MYE" ]
+      }, {
+        "name" : "test_add_group[None:nameIx6y{;headerE(s2 /xOJ;footer ]",
+        "uid" : "6c79f2b3de075138",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280249731,
+          "stop" : 1609280249731,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:nameIx6y{;headerE(s2 /xOJ;footer " ]
+      }, {
+        "name" : "test_add_group[None:name;headeriL$ #Chk']Iv; *[t=;footer$=7qK=@zY>5]VR]",
+        "uid" : "54d072448137861",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280250793,
+          "stop" : 1609280250793,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name;headeriL$ #Chk']Iv; *[t=;footer$=7qK=@zY>5]VR" ]
+      }, {
+        "name" : "test_add_group[None:name&XA;header0v5iAl;footerP$q6/t  }8o0B'#?O^g]",
+        "uid" : "25a73eba1739e82",
+        "parentUid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280251910,
+          "stop" : 1609280251910,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "None:name&XA;header0v5iAl;footerP$q6/t  }8o0B'#?O^g" ]
+      } ],
+      "uid" : "1eaf419a03e3cb5b35b6d7d2a8fbcab7"
+    }, {
+      "name" : "AttributeError: 'NoneType' object has no attribute 'group'",
+      "children" : [ {
+        "name" : "test_on_contact_view_page",
+        "uid" : "b1d27b8f875e39b6",
+        "parentUid" : "4275126efd978a824e4c8f2963e9923f",
+        "status" : "broken",
+        "time" : {
+          "start" : 1609280810997,
+          "stop" : 1609280811919,
+          "duration" : 922
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4275126efd978a824e4c8f2963e9923f"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  }, {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\n  At index 69 diff: 227:asdasdd;asdasda;asadasd != 226:asdasdd;asdasda;asadasd\n  Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \n  Use -v to get the full diff",
+      "children" : [ {
+        "name" : "test_delete_some_group",
+        "uid" : "86f39b052d388ae8",
+        "parentUid" : "2141218649d5563fae1b0c5cd9fe2117",
+        "status" : "failed",
+        "time" : {
+          "start" : 1609280542262,
+          "stop" : 1609280543359,
+          "duration" : 1097
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "2141218649d5563fae1b0c5cd9fe2117"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ]
+}

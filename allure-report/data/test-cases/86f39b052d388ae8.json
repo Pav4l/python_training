@@ -1,0 +1,158 @@
+{
+  "uid" : "86f39b052d388ae8",
+  "name" : "test_delete_some_group",
+  "fullName" : "test.test_del_group#test_delete_some_group",
+  "historyId" : "f4f569d06e801e1682377a866bb7b03e",
+  "time" : {
+    "start" : 1609280542262,
+    "stop" : 1609280543359,
+    "duration" : 1097
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\n  At index 69 diff: 227:asdasdd;asdasda;asadasd != 226:asdasdd;asdasda;asadasd\n  Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \n  Use -v to get the full diff",
+  "statusTrace" : "app = <fixture.application.Application object at 0x000001A1F083B220>\ndb = <fixture.db.DbFixture object at 0x000001A1F083B2B0>, check_ui = False\n\n    def test_delete_some_group(app, db, check_ui):\n        if len(db.get_group_list()) == 0:\n            app.group.create(Group(name=\"test\"))\n        old_groups = db.get_group_list()\n        group = random.choice(old_groups)\n        app.group.delete_group_by_id(group.id)\n        new_groups = db.get_group_list()\n        old_groups.remove(group)\n>       assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)\nE       assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\nE         At index 69 diff: 227:asdasdd;asdasda;asadasd != 226:asdasdd;asdasda;asadasd\nE         Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \nE         Use -v to get the full diff\n\ntest\\test_del_group.py:12: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1609280542261,
+      "stop" : 1609280542261,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1609280531212,
+      "stop" : 1609280542261,
+      "duration" : 11049
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "stop",
+    "time" : {
+      "start" : 1609280531203,
+      "stop" : 1609280531203,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1609280531203,
+      "stop" : 1609280531212,
+      "duration" : 9
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1609280543474,
+      "stop" : 1609280544277,
+      "duration" : 803
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1609280543470,
+      "stop" : 1609280543470,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_del_group"
+  }, {
+    "name" : "host",
+    "value" : "GOREV-NOTE"
+  }, {
+    "name" : "thread",
+    "value" : "8800-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e9f8e5c825595ce4",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\n  At index 89 diff: 248:asdasdd;asdasda;asadasd != 247:asdasdd;asdasda;asadasd\n  Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \n  Use -v to get the full diff",
+      "time" : {
+        "start" : 1609280513090,
+        "stop" : 1609280514200,
+        "duration" : 1110
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "86f39b052d388ae8.json",
+  "parameterValues" : [ ]
+}

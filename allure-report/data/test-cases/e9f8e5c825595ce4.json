@@ -1,0 +1,143 @@
+{
+  "uid" : "e9f8e5c825595ce4",
+  "name" : "test_delete_some_group",
+  "fullName" : "test.test_del_group#test_delete_some_group",
+  "historyId" : "f4f569d06e801e1682377a866bb7b03e",
+  "time" : {
+    "start" : 1609280513090,
+    "stop" : 1609280514200,
+    "duration" : 1110
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\n  At index 89 diff: 248:asdasdd;asdasda;asadasd != 247:asdasdd;asdasda;asadasd\n  Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \n  Use -v to get the full diff",
+  "statusTrace" : "app = <fixture.application.Application object at 0x0000024B6EA159D0>\ndb = <fixture.db.DbFixture object at 0x0000024B6EA15910>, check_ui = False\n\n    def test_delete_some_group(app, db, check_ui):\n        if len(db.get_group_list()) == 0:\n            app.group.create(Group(name=\"test\"))\n        old_groups = db.get_group_list()\n        group = random.choice(old_groups)\n        app.group.delete_group_by_id(group.id)\n        new_groups = db.get_group_list()\n        old_groups.remove(group)\n>       assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)\nE       assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\nE         At index 89 diff: 248:asdasdd;asdasda;asadasd != 247:asdasdd;asdasda;asadasd\nE         Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \nE         Use -v to get the full diff\n\ntest\\test_del_group.py:12: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "stop",
+    "time" : {
+      "start" : 1609280502502,
+      "stop" : 1609280502502,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "app",
+    "time" : {
+      "start" : 1609280502510,
+      "stop" : 1609280513087,
+      "duration" : 10577
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "db",
+    "time" : {
+      "start" : 1609280502502,
+      "stop" : 1609280502509,
+      "duration" : 7
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "check_ui",
+    "time" : {
+      "start" : 1609280513088,
+      "stop" : 1609280513088,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "afterStages" : [ {
+    "name" : "stop::fin",
+    "time" : {
+      "start" : 1609280514315,
+      "stop" : 1609280515099,
+      "duration" : 784
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  }, {
+    "name" : "db::fin",
+    "time" : {
+      "start" : 1609280514312,
+      "stop" : 1609280514312,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : false,
+    "stepsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "attachmentsCount" : 0
+  } ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "test"
+  }, {
+    "name" : "suite",
+    "value" : "test_del_group"
+  }, {
+    "name" : "host",
+    "value" : "GOREV-NOTE"
+  }, {
+    "name" : "thread",
+    "value" : "7508-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test.test_del_group"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e9f8e5c825595ce4.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,466 @@
+{
+  "63ddd405a7c16b62c15ec6832083d339" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "5e08fa2d8c587e36",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280245427,
+        "stop" : 1609280245428,
+        "duration" : 1
+      }
+    } ]
+  },
+  "ade99f00746b3c8772c8628f24641e43" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "4068111bca80be47",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280248620,
+        "stop" : 1609280248620,
+        "duration" : 0
+      }
+    } ]
+  },
+  "652f0d622d4d9b905f677cc3b1dc7942" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "436e078b2d534b5c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280807126,
+        "stop" : 1609280810965,
+        "duration" : 3839
+      }
+    } ]
+  },
+  "9e8e369969d3040ae04cb5423006bc0a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "15db070cf80898fc",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280812041,
+        "stop" : 1609280813079,
+        "duration" : 1038
+      }
+    } ]
+  },
+  "f4f569d06e801e1682377a866bb7b03e" : {
+    "statistic" : {
+      "failed" : 1,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "86f39b052d388ae8",
+      "status" : "failed",
+      "statusDetails" : "AssertionError: assert [110:group_ne...;asadasd, ...] == [110:group_ne...;asadasd, ...]\n  At index 69 diff: 227:asdasdd;asdasda;asadasd != 226:asdasdd;asdasda;asadasd\n  Right contains one more item: 378:nameIx6y{;headerE(s2 /xOJ;footer \n  Use -v to get the full diff",
+      "time" : {
+        "start" : 1609280542262,
+        "stop" : 1609280543359,
+        "duration" : 1097
+      }
+    } ]
+  },
+  "b690fe2d4aecafbdfd07b43cfe71f6d3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "aaf357cbe6c0b8c2",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275985855,
+        "stop" : 1609275997175,
+        "duration" : 11320
+      }
+    } ]
+  },
+  "8188c8e4bf7e6e66c862f1d2c84a1817" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7d0e2943ae3ec94c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280813112,
+        "stop" : 1609280813118,
+        "duration" : 6
+      }
+    } ]
+  },
+  "dbe4bf731f096ead8203bf111dd34c8a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "fba46773b4b8aee7",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280646123,
+        "stop" : 1609280648862,
+        "duration" : 2739
+      }
+    } ]
+  },
+  "6a50adc438856aa81ba670337d6cfc5a" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6c79f2b3de075138",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280249731,
+        "stop" : 1609280249731,
+        "duration" : 0
+      }
+    } ]
+  },
+  "fe8d1e26f93c584b55bb055ee46529f9" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "79d0bc9f23a4fbd8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275942517,
+        "stop" : 1609275951494,
+        "duration" : 8977
+      }
+    } ]
+  },
+  "4bcc7d207bf1e82b3b83e43d21d293dd" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "7582becf8a6e6d63",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275963038,
+        "stop" : 1609275974405,
+        "duration" : 11367
+      }
+    } ]
+  },
+  "2a4dad761aeb8b29368ce8242f63e23f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "6aea6ac27339e296",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275951565,
+        "stop" : 1609275962996,
+        "duration" : 11431
+      }
+    } ]
+  },
+  "e8fd5a8b57fcb06879428c198633a481" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9326fd62d6a737e8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280741414,
+        "stop" : 1609280743432,
+        "duration" : 2018
+      }
+    } ]
+  },
+  "f17f29013de8c74eab7a07b09922dc90" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "49a6edfae2dc5c4a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280406229,
+        "stop" : 1609280408953,
+        "duration" : 2724
+      }
+    } ]
+  },
+  "6f9bd25125b41adcbe6eb0dd136ea18f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "54d072448137861",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280250793,
+        "stop" : 1609280250793,
+        "duration" : 0
+      }
+    } ]
+  },
+  "f599871e4a83a0b0e11949aabf067250" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "25a73eba1739e82",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280251910,
+        "stop" : 1609280251910,
+        "duration" : 0
+      }
+    } ]
+  },
+  "23b9b5e9b97434bd3db7dfb0c980fde1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "21543293e87aa125",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275974449,
+        "stop" : 1609275985812,
+        "duration" : 11363
+      }
+    } ]
+  },
+  "9622e59f76dbc6363d20a0b36e32cf01" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "b1d27b8f875e39b6",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: 'NoneType' object has no attribute 'group'",
+      "time" : {
+        "start" : 1609280810997,
+        "stop" : 1609280811919,
+        "duration" : 922
+      }
+    } ]
+  },
+  "eca00eb0827223e58cc41da025188ab3" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "54fec6d614f2be63",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280408980,
+        "stop" : 1609280412442,
+        "duration" : 3462
+      }
+    } ]
+  },
+  "a1a181b844ffdac33b9250ef00808780" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 1,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "a28bd6913ac83a31",
+      "status" : "broken",
+      "statusDetails" : "AttributeError: module 'pytest' has no attribute 'allure'",
+      "time" : {
+        "start" : 1609280247500,
+        "stop" : 1609280247500,
+        "duration" : 0
+      }
+    } ]
+  },
+  "8ecdfc6bebb59bf305e56cbad2e7b30c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "89eee4e0ec5d1668",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280449861,
+        "stop" : 1609280451719,
+        "duration" : 1858
+      }
+    } ]
+  },
+  "50b4f13d37e2ce3efb8ae206c3ee777f" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "bb9996b453105c6d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609275935603,
+        "stop" : 1609275942462,
+        "duration" : 6859
+      }
+    } ]
+  },
+  "07aa15b621954a88bc388790d0e4e27c" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "946d1edfdb461d27",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280775170,
+        "stop" : 1609280782008,
+        "duration" : 6838
+      }
+    } ]
+  },
+  "38ec08ef9d40e9a5f581571d44033af1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "9963f941d524293e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1609280061154,
+        "stop" : 1609280063379,
+        "duration" : 2225
+      }
+    } ]
+  }
+}
